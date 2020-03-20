@@ -1,0 +1,21 @@
+net: "./train_val.prototxt"
+# test_iter specifies how many forward passes the test should carry out.
+# XXXX
+# covering the full 480 testing images.
+test_iter: 16
+# Carry out testing every 1440/64 training iterations.
+test_interval: 24
+# The base learning rate, momentum and the weight decay of the network.
+base_lr: 0.01
+momentum: 0.9
+weight_decay: 0.0005
+lr_policy: "step"
+gamma: 0.0001
+power: 0.75
+# stepsize = 8*epoch
+stepsize = 192
+display: 24
+max_iter: 480
+snapshot: 120
+snapshot_prefix: "./model/"
+solver_mode: GPU
